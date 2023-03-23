@@ -2178,7 +2178,7 @@
               maxlength="256"
               name="Imi-i-nazwisko"
               data-name="Imię i nazwisko"
-              placeholder=""
+              placeholder="Podaj imię, a następnie nazwisko"
               id="Imi-i-nazwisko"
               required=""
               onkeyup="splitName()" />
@@ -2503,8 +2503,7 @@
   </body>
   <script>
       function splitName() {
-          console.log('im here onchange');
-          // Get the name input value
+
           const nameInput = document.getElementById("Imi-i-nazwisko");
           nameInput.value = nameInput.value.replace(/[^a-zA-Z- ]/g, '');
 
@@ -2512,7 +2511,6 @@
           
           // Split the name by space
           const nameArray = name.split(/\s+(?=\S)/); // Split by one or more spaces
-          console.log(nameArray);
 
           // Set the first name and last name inputs
           const firstNameInput = document.getElementById("firstName");
@@ -2521,8 +2519,6 @@
           const lastNameInput = document.getElementById("lastName");
           lastNameInput.value = nameArray[nameArray.length - 1];
 
-          console.log('lastName -> ' + lastNameInput.value);
-          console.log('firstName -> ' + firstNameInput.value);
       }
   </script>
 </html>
