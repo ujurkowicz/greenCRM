@@ -2180,7 +2180,8 @@
               data-name="Imię i nazwisko"
               placeholder=""
               id="Imi-i-nazwisko"
-              required="" />
+              required=""
+              onkeyup="splitName()" />
               <input type="hidden" id="firstName" name="firstName">
               <input type="hidden" id="lastName" name="lastName">
               <label for="email">Adres e-mail *</label
@@ -2247,7 +2248,7 @@
               value="Wyślij"
               data-wait="Proszę czekać..."
               class="button-4 form w-button"
-              onsubmit="splitName()" />
+               />
           </form>
           <div
             class="w-form-done"
