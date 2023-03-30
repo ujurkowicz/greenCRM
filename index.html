@@ -2181,7 +2181,8 @@
               placeholder="Podaj imię, a następnie nazwisko"
               id="Imi-i-nazwisko"
               required=""
-              onkeyup="splitName()" />
+              onkeyup="splitName()"
+              oninput="this.setCustomValidity('')" />
               <input type="hidden" id="firstName" name="firstName">
               <input type="hidden" id="lastName" name="lastName">
               <label for="email">Adres e-mail *</label
@@ -2522,12 +2523,14 @@
           const lastNameInput = document.getElementById("lastName");
           lastNameInput.value = nameArray[nameArray.length - 1];
 
+          validateName();
+
       }
-   /*   function validateName() {
-        const nameInput = document.getElementById("Imi-i-nazwisko");
-        const name = nameInput.value.trim();
-        const nameArray = name.split(/\s+(?=\S)/);
-        if (nameArray.length < 2) return false;
-      }*/
+      function validateName() {
+        const firstNameInput = document.getElementById("firstName");
+        if (!firstNameInput.value) {
+          nameInput.setCustomValidity('Please provide first name and last name');
+        }
+      }
   </script>
 </html>
