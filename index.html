@@ -2523,14 +2523,13 @@
           const lastNameInput = document.getElementById("lastName");
           lastNameInput.value = nameArray[nameArray.length - 1];
 
-          validateName();
+          if (!firstNameInput.value) {
+            nameInput.setCustomValidity('Please provide first name and last name');
+          }
 
       }
       function validateName() {
-        const firstNameInput = document.getElementById("firstName");
-        if (!firstNameInput.value) {
-          nameInput.setCustomValidity('Please provide first name and last name');
-        }
+       
       }
   </script>
 </html>
