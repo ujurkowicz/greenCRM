@@ -2508,22 +2508,19 @@
       function splitName() {
 
           const nameInput = document.getElementById("Imi-i-nazwisko");
-
-          const nameMatch = nameInput.match(/(?<firstName>[a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)(?: +(?<lastName>[a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+(?:-[a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż]+)*))?/)?.groups;
-
-          /*nameInput.value = nameInput.value.replace(/[^a-zA-Z- ]/g, '');
+          nameInput.value = nameInput.value.replace(/[^a-zA-Z- ]/g, '');
 
           const name = nameInput.value.trim(); // Trim any leading/trailing spaces
           
           // Split the name by space
-          const nameArray = name.split(/\s+(?=\S)/); // Split by one or more spaces*/
+          const nameArray = name.split(/\s+(?=\S)/); // Split by one or more spaces
 
           // Set the first name and last name inputs
           const firstNameInput = document.getElementById("firstName");
-          firstNameInput.value = nameMatch.firstName;
+          firstNameInput.value = nameArray.slice(0, -1).join(" ");
 
           const lastNameInput = document.getElementById("lastName");
-          lastNameInput.value = nameMatch.lastName;
+          lastNameInput.value = nameArray[nameArray.length - 1];
 
       }
    /*   function validateName() {
