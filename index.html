@@ -2508,7 +2508,7 @@
       function splitName() {
 
           const nameInput = document.getElementById("Imi-i-nazwisko");
-          nameInput.value = nameInput.value.replace(/[^a-zA-Z- ]/g, '');
+          nameInput.value = nameInput.value.replace(/[^a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż- ]/g, '');
 
           const name = nameInput.value.trim(); // Trim any leading/trailing spaces
           
