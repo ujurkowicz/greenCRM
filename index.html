@@ -2179,6 +2179,7 @@
               name="Imi-i-nazwisko"
               data-name="Imię i nazwisko"
               placeholder="Podaj imię, a następnie nazwisko"
+              pattern="([a-zA-Z]+\s){2,}([a-zA-Z]+)"
               id="Imi-i-nazwisko"
               required=""
               onkeyup="splitName()" />
@@ -2523,5 +2524,11 @@
           lastNameInput.value = nameArray[nameArray.length - 1];
 
       }
+   /*   function validateName() {
+        const nameInput = document.getElementById("Imi-i-nazwisko");
+        const name = nameInput.value.trim();
+        const nameArray = name.split(/\s+(?=\S)/);
+        if (nameArray.length < 2) return false;
+      }*/
   </script>
 </html>
