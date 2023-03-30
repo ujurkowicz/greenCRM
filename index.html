@@ -2179,7 +2179,6 @@
               name="Imi-i-nazwisko"
               data-name="Imię i nazwisko"
               placeholder="Podaj imię, a następnie nazwisko"
-              pattern="([a-zA-Z]+\s){2,}"
               id="Imi-i-nazwisko"
               required=""
               onkeyup="splitName()" />
@@ -2509,7 +2508,7 @@
       function splitName() {
 
           const nameInput = document.getElementById("Imi-i-nazwisko");
-          nameInput.value = nameInput.value.replace(/[^a-zA-Z- ]/g, '');
+          nameInput.value = nameInput.value.replace(/[^a-zA-ZĄąĆćĘęŁłŃńÓóŚśŹźŻż- ]/g, '');
 
           const name = nameInput.value.trim(); // Trim any leading/trailing spaces
           
