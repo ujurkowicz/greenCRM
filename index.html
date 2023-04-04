@@ -2206,7 +2206,7 @@
               id="Telefon"
               pattern="[+0-9]{9,13}"
               oninvalid="this.setCustomValidity('Enter a phone number')"
-              oninput="this.setCustomValidity('')"
+              oninput="this.reportValidity()"
               required="" /><label for="Firma">Firma *</label
             ><input
               type="text"
@@ -2528,8 +2528,6 @@
           }
 
       }
-      function validateName() {
-       
-      }
+
   </script>
 </html>
