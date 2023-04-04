@@ -2205,8 +2205,8 @@
               placeholder=""
               id="Telefon"
               pattern="[+0-9]{9,13}"
-              oninvalid="this.setCustomValidity('Enter a phone number')"
-              oninput="this.reportValidity()"
+              oninvalid="invalidMsg(this)"
+              oninput="invalidMsg(this)"
               required="" /><label for="Firma">Firma *</label
             ><input
               type="text"
@@ -2527,6 +2527,14 @@
             nameInput.setCustomValidity('Please provide first name and last name');
           }
 
+      }
+      function invalidMsg(textbox) {
+        if (textbox.validity.typeMismatch) {
+          textbox.setCustomValidity
+                ('Enter a phone number');
+      } else {
+          textbox.setCustomValidity('');
+      }
       }
 
   </script>
